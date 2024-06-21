@@ -78,7 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
   
   return <div className = "app-main">
   <h2>
-    Create Images With Your Mind
+    The World is Your Canvas
   </h2>
   <textarea
   className = "app-input"
