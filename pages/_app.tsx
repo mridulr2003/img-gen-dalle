@@ -1,6 +1,7 @@
 
 import type { AppProps } from "next/app";
 import "./App.css"
+import "./App.scss"
 import OpenAI from "openai";
 import getConfig from "next/config";
 import { useState, useEffect } from "react";
@@ -13,6 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
   const [typedText, setTypedText] = useState("");
   const text = "Creating Image...Please Wait...";
+
+  const stars = [];
+  for (let i = 0; i < 20; i++) {
+    stars.push(<div className = "shooting_star" key = {i}></div>)
+  }
   
   const { publicRuntimeConfig } = getConfig();
 
@@ -77,6 +83,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
   
   return <div className = "app-main">
+    {stars}
   <h2>
     The World is Your Canvas
   </h2>
